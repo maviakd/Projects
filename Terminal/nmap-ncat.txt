@@ -1,0 +1,15 @@
+			NMAP
+
+nmap -sT 1.1.1.1 = use nmap to scan open TCP ports
+nmap -sT 1.1.1.1 = use nmap to scan open UDP ports
+
+resource filename = executes the commands in a file
+show exploits
+
+
+
+			NETCAT
+
+netcat -zvn 1.1.1.1
+netcat -vn 1.1.1.1 port#
+

@@ -1,0 +1,25 @@
+>route add default gw <gateway address>
+route -n
+nano/cat /etc/resolv.conf
+
+$ sudo dhclient -r eth0 - Deletes eth0 IP Address
+$ sudo dhclient eth0 - Assigns IP Address 
+
+
+		Deleting a MAC Address
+
+service networking restart - First you MUST shutdown the network service
+ifconfig eth0 hw ether ff:ff:ff:ff - Enter the new MAC Address
+
+dhclient -r eth0 - Deletes IP Address (to be sure)
+dhclient eth0 - Assigns new IP Address (To be sure)
+
+service networking - Restarting the network service
+
+--------------------------------------------------------------
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("8.8.8.8", 80))
+print(s.getsockname()[0])
+s.close()
+---------------------------------------------------------------

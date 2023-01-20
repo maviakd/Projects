@@ -1,0 +1,247 @@
+WINDERSTAT
+#!/usr/bin/python3
+#!/usr/bin/env python3
+source venv/bin/activate
+#!/bin/bash
+only py - #!/usr/bin/python3
+only py- #!/usr/bin/env python3
+
+
+#Displays the user ID(UID)
+echo $UID
+
+if [[ $UID -eq 0 ]]
+then 
+	echo "you are root"
+else 
+	echo "you are not root"
+fi
+
+fi = ends the if loop
+-eq = is equal to
+-ne = is not equal to 
+-gt = is greater than
+-ge = is greater than or equal to
+-lt = is less than 
+-le = is less than or equal to 
+
+		with double parentheses
+
+
+(("$a" < "$b")) = is less than 
+(("$a" <= "$b")) = is less than or equal to 
+(("$a" > "$b")) = is greater than 
+(("$a" >= "$b")) = is greater than or equal to
+
+				Bandit Progress
+
+Bandit User - bandit.labs.overthewire.org
+Bandit server - 2220
+Bandit pw 1 - boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+Bandit pw 2 - CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+Bandit pw 3 - UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+Bandit pw 4 - pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+Bandit pw 5 - koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+Bandit pw 6 - DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+Bandit pw 7 - HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+Bandit pw 8 - cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+Bandit pw 9 - UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+Bandit pw 10 - truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+Bandit pw 11 - IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+
+
+import os
+os.system("echo HI")
+import os, random, string, hashlib
+os.urandom(32) - creates a 32 bit key
+a =  ( ''.join(random.choice(string.ascii_letters) for i in range(10)))
+random.randint(0,9999)
+key = hashlib.sha256(password).digest()
+
+useradd -G sudo -m <username> -s /bin/bash
+scp Djodan@x.x.x.x:/home/pi/Desktop/Djodan/work.py /mtn/c/Users/user/Desktop/
+scp foobar.txt your_username@remotehost.edu:/some/remote/directory ///// SEND
+scp myhomework.tar maviakd@gaben.cs.sunyit.edu:~/
+
+CS ssh account = ssh maviakd@gaben.cs.sunyit.edu
+cat /etc/apt/sources.list
+
+				Linux Sources
+
+deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main non-free contrib
+deb-src http://mirrors.ocf.berkeley.edu/kali kali-rolling main non-free contrib
+
+					Learned Terms
+Airmon-ng check kill - kills any process that might interupt networking
+
+NAT Network is used to view other kali machines
+service --status-all
+service ssh status
+service ssh start
+service networking restart
+ssh (hostname) (IP)
+
+nmap -V scanme.nmap.org = scans all reserved TCP ports on the machine
+nmap -sS = lauches a stealth SYN scan against each machine
+
+xxd = Default linux hex reader/interpreter
+
+chmod ugo+rwx schedule.txt = change permission of schedulule (=user)(g=group)(o=others) to (r=read)(w=write)(x=execute)
+chmod 777 schedule.txt
+chown suny.suny = Change user from suny to suny 
+
+uname -a
+ip addr
+netdiscover -r 20.0.2.0/24
+netstat -tupln
+
+ls -1l = lists permissions date, time, size, and name
+ls -lah = shows file size
+ls -a = list hidden files
+[command] --help
+man [command]
+cut -d: -f1 /etc/passwd = command to view all users
+cat ./- = read dashed filenames
+file = determines the file type
+== | base64 --decode = decodes a base64 line of code 
+cut -c 5 sample.txt = gets the fith character of each line
+ls | tee dog.txt = copies the outputs of ls into dog.txt
+
+msfadmin user & pw
+vi /etc/apt/sources.list or nano
+
+						How to run a script
+echo echo hello world > script1
+chmod +x script1
+./script1
+
+						Processes
+ps = prints out processes
+ps -ux = all the processes running under your name
+ps -aux = all the processes running on the system
+ps -U djo = shows you all the processes that djo is running 
+pidof vim - prints id of vim process
+kill vim #### = kills vim with the id of ####
+kill -KILL = force kill
+& - Used to send process to the background
+sudo fuser -k 80/tcp - Used on Django to kill active connection on port
+kill -9 <PID> - Used to kill a normal process
+command > /dev/null 2>&1 &  -  used to suppress messages from background process
+
+
+
+						Sort
+sort a.txt = sorts into alhpabetical order
+sort -r = reverse alphabetical order
+sort -R = randomize
+sort -f = ignore case
+	export LC_ALL=C = in order to ignore case
+sort -n or -g = numeric comparison
+sort -M = months
+
+						Uniq
+
+sort text.txt | uniq -c = sorting and providing amount found
+sort text.txt | uniq -d = only provides repeated values 
+sort text.txt | uniq -u = provides unique values
+base64 /dev/urandom | head -c 10000000 > file.txt
+cat/dev/urandom | base64 | head -c 3 > a.txt
+
+						Find
+
+
+find . -type d = find only directories in my current directory and no files
+find . -type f = find only files in my current directory and no directories
+find -type f -name file1.txt = finds specific FILE called text1.txt
+find -type f -iname = include CAPS
+find -mmin -10 = find files that were eddited less than 10 minutes ago
+find -mmin +10 = find files that were eddited more than 10 minutes ago
+find -type f -mmin +1 -mmin -5 = more than one minute from now but less than 5 mns ago
+find -mtime -10 = find files that were eddited less than 10 days ago
+find -type f -size -5M(Under 5 Megabites) or +5M(over 5 Megabites)
+find -type f -size 1033c = in bytes size
+find . -iname code* -exec chmod ugo+rwx {} \; = performs command on results of find
+find . -empty = find all empty files
+find . ! -empty = find all empty not files
+find -perm 777 = find files that have permissions RWX to everyone [owner, group, others]
+
+
+						Grep (get regular expression and print)
+
+grep 'djodan' *.docx = find files that end with .docx extension with the word djodan in it(current directory)
+grep "djodan(Cap sensitive)" file4.txt = searches file for line that contains (x) and prints 
+grep -rl "djodan" ./
+grep -w = only exact mathces
+grep -i = to ignore case sensitivity
+grep -c = displays number of matches within each file
+grep -r "djodan" ./= recursive search; seaches for (x) within current directory & sub-directory
+grep -l "djodan" ./ = displays files that contain a match within current directory & sub-directory
+grep -in -B 4 "djodan" *.txt= search for (x) is all txt files and print 4 lines BEFORE match
+grep history | "X" | = seatch terminal history to find when you have used command x
+grep history | "X" | cat >> x.txt = store result of search into x.txt
+grep "...-...-...." = DOTS are wildcards similar to *
+grep -in -A 4 "djodan" *.txt= search for (x) is all txt files and print 4 lines AFTER match
+grep -in -C 4 "djodan" *.txt= search for (x) is all txt files and provide surrounding CONTEXT
+Strings data.txt |grep "=" = may read through inreadable files and filters for (X)
+
+
+
+
+					User Management
+sudo - super user do
+sudo useradd djo - add new user called djo
+sudo userdel djo - deletes user called djo
+/etc/passwd/ = file that contains usernames, home directories
+sudo passwd djo = changes djo's password
+chown suny.suny = Change owner from suny to suny
+sudo groupadd group1 = creates group called group1
+sudo groupdel group1 = deletes group1
+sudo adduser djo group1 = adds djo to group1
+sudo deluser djo group1= removing user from group1 
+Sudo chomod 777 file = changes permissions of a file
+Sudo chomod 777 file -R = changes permissions of a directory(recursive)
+777 = owner, group, user
+	7 = all
+	4 = read
+	2 = write
+	1 = execute
+
+		Deleting a MAC Address
+
+service networking restart - First you MUST shutdown the network service
+ifconfig eth0 hw ether ff:ff:ff:ff - Enter the new MAC Address
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
+
+/etc/hosts - file to change localhost
+sudo a2ensite 000.sites-available - if apache config file has been changed
+sudo fuser -k 80/tcp - terminates session on port
+sudo lsof -t -i tcp:80 | xargs kill -9
+
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt-get install wireguard
+
+
+wget https://github.com/Nyr/openvpn-install/raw/master/openvpn-install.sh
+sftp DjoDan - file.txt ## searches for that file in tha home directory and places it in the local machines home
+
+ip link show
+ifconfig tun0 down
+curl ifconfig.me
+nano /etc/dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

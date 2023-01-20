@@ -1,0 +1,220 @@
+WinDirStat
+powershell color is 5f
+
+read name = queries user for input and saves it as name 
+read first last = queriesuser for two inputs first and last
+read -p "please enter fill name " first last= same line
+echo "hello user $first $last" = prints out the variables
+read -s = hides the content that the user is inputting (password)
+read -a = makes an array 
+
+echo $1 $2 $3 | ./args a b c = passes arguments to script when executed
+$0 = the name of the shell script
+echo $# = prints amount of variables passed
+@echo off = prevents a repeat of text
+
+Get-NetFirewallProfile | Format-Table Name, Enabled = grabs firewall profiles
+Set-NetFirewallProfile -Profile Domain, Public, Private -Enabled False = Turn on or off
+
+DEFRAG | defrag C: /U
+DISK CLEANUP | cleanmgr
+SFC SCAN (system file check) | sfc /scannow
+
+Name    Enabled
+----    -------
+Domain     True
+Private    True
+Public     True
+
+
+
+ifconfig release
+ipconfig /renew
+
+
+
+@echo off
+echo this window closes in 5 seconds
+echo.
+echo 5
+ping -n 2 127.0.0.1>nul
+echo 4
+ping -n 2 127.0.0.1>nul
+echo 3
+ping -n 2 127.0.0.1>nul
+echo 2
+ping -n 2 127.0.0.1>nul
+echo 1
+ping -n 2 127.0.0.1>nul
+pause
+
+
+
+@echo off
+set output=scorpion
+echo %output%
+
+set /A > If the value needs to be numeric
+set /P > prompts the user
+
+--------------------------------------------------------------
+LOOPS
+
+for item in [LIST]
+do
+  [COMMANDS]
+done
+
+
+
+SET /A "index = 1"
+SET /A "count = 5"
+:while
+if %index% leq %count% (
+   echo The value of index is %index%
+   SET /A "index = index + 1"
+   goto :while
+)
+pause
+
+EQU - equal
+NEQ - not equal
+LSS - less than
+LEQ - less than or equal
+GTR - greater than
+GEQ - greater than or equal
+
+
+SetLocal EnableDelayedExpansion
+set var1=Hello
+set var2=Hello
+set var3=HELLO
+if !var1! == !var2! echo Equal
+if !var1! == !var3! (echo Equal) else (echo Not Equal)
+
+set loop=true
+set loopcheck=true
+set /A count=1
+
+set loop=true
+set loopcheck=true
+set /A numbers=10
+
+:while
+if !loop! == !loopcheck! (
+	set /p option="chose one of the functions>	"
+	if !option! leq %numbers% (
+	echo "TURNING OFF THE FILE
+	set loop=false
+	)
+	goto :while
+)
+----------------------------------------------------------------
+
+
+
+
+
+@echo off 
+set torun=wmic bios get serialnumber /format:value
+for /f "tokens=2 delims==" %%a in ('%torun%') do set serial=%%a
+echo Serial is %serial%
+set /p var = "Part one is done"
+
+for /f %%a in ('hostname') do (
+  md %%a
+) 
+
+
+The for command accepts options when the /f flag is used. Here's a list of options that can be used:
+delims=x Delimiter character(s) to separate tokens
+skip=n Number of lines to skip at the beginning of file and text strings
+eol=; Character at the start of each line to indicate a comment
+tokens=n Numbered items to read from each line or string to process
+usebackq Use another quoting style:
+
+
+
+REM list loops
+REM %%a is the vairable
+REM (start;increment;end)
+
+for /l %%a in (1;2;20) do (
+echo %%a
+
+)
+pause
+
+
+
+REM list loops
+REM %%a is the vairable
+REM (start;increment;end)
+
+for /f "tokens=* delims= " %%a in ('echo dog and bob and rodney and log plus mod') do (
+echo %%a
+)
+pause
+
+REM DELIMS: What symbol are we going to split this sentence
+REM TOKENS: The amount of times a delimeter was found or what split we go on. If tokens = * it selects all tokens
+REM DEFAULT Token=1 Delimeter = |space|
+REM used with /f
+
+
+
+Echo space formating
+set x=3000
+set y=2
+set x=        %x%
+set y=        %y%
+echo.X=%x:~-8%
+echo.Y=%y:~-8%
+X=    3000
+Y=       2
+
+Cut string
+set str=politic
+echo.%str%
+set str=%str:~0,4%
+echo.%str%
+politic
+poli
+
+Removing word
+set str=the cat in the hat
+echo.%str%
+set str=%str:the =%
+echo.%str%
+politic
+oliti
+
+Substituting word
+set str=teh cat in teh hat
+echo.%str%
+set str=%str:teh=the%
+echo.%str%
+teh cat in teh hat
+the cat in the hat
+
+Remove first and last characters
+set str=politic
+echo.%str%
+set str=%str:~1,-1%
+echo.%str%
+politic
+oliti
+
+Dates
+echo.Date   : %date%			Date   : Sat 03/11/2006
+echo.Weekday: %date:~0,3%		Weekday: Sat
+echo.Month  : %date:~4,2%		Month  : 03
+echo.Day    : %date:~7,2%		Day    : 11
+echo.Year   : %date:~10,4%		Year   : 2006
+
+
+
+
+
+
+

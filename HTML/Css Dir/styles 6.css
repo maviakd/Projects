@@ -1,0 +1,45 @@
+/*
+em - Relative depends on parent
+1em = 16px default browser style
+1em = base value
+*/
+
+.outer{ /*Absolute Value*/
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
+.inner{ /*Relative Value*/
+  width: 50%;
+  height: 50%;
+  background: red;
+}
+
+
+.html{
+  font-size: 32px;
+}
+.absolute{ /*Does not change size*/
+  font-size: 2rem/*rem values are dependent on the root not the parent (html)*/;
+}
+.relative{ /*Changes size based on browser settings*/
+  font-size: 2em;
+}
+
+/*
+vh - view height - percent of the screen
+vw - view width - percent of the screen
+Relative
+*/
+
+.banner{
+  width: 10vw;
+  height: 10vh;
+  background: lightblue;
+}
+
+.header{
+  width: 20vw;
+  height: 20vh;
+  background: red;
+}

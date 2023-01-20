@@ -1,0 +1,13 @@
+
+ifconfig wlan0 down
+airmon-ng check kill
+iwconfig wlan0 mode monitor - changes to monitor/permiscious mode
+Airodump-ng - tool used
+
+airodump-ng --band a wlana0= checks for 5GHz networks
+airodump-ng --band abg = checks all frequencies
+airodump-ng --essid Student wlan0 --write test.txt
+
+
+
+

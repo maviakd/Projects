@@ -1,0 +1,35 @@
+﻿Djo-Dan Maviaki
+
+Step 11 code:
+
+
+standardizer = StandardScaler()
+
+
+fdny_4_new_standardized = standardizer.fit_transform(fdny_4)
+fdny_4_new_standardized
+
+
+kmeans.fit(fdny_4_new_standardized)
+
+
+# create the PCA object
+pca = PCA(n_components=2)
+
+
+# find the first two principal components of the FDNY data
+pca.fit(fdny_4_new_standardized)
+
+
+# find the coordinates of the penguin data in the new coordinate system
+fdny_4_pca = pca.transform(fdny_4_new_standardized)
+
+
+fdny_4_pca
+
+
+fdny_4_pca_df = pd.DataFrame(fdny_4_pca, columns = ["PC1","PC2"])
+fdny_4_pca_df
+
+
+sns.scatterplot(x = "PC1" ,y = "PC2" ,hue = "PC1", data = fdny_4_pca_df)

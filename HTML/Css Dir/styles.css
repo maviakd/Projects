@@ -1,0 +1,17 @@
+/* Priority 1-3 (1 has more priority)
+1-Inline on line CSS
+2-Internal one file CSS
+3-External - THIS CSS PAGE
+*/
+
+h1{
+  color: crimson;
+  font-size: 4rem;
+}
+h2{
+  color: blue;
+}
+/*Css rules*/
+/*Selectors*/
+/*Declaration*/
+/*Properties*/

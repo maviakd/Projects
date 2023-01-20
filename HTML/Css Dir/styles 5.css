@@ -1,0 +1,17 @@
+/*RBG red green blue 0-255*/
+/*https://coolors.co/*/
+
+.foot{
+  color: violet;
+  background-color: black;
+}
+
+#first{
+  color: rgb(255,0,0);
+  background-color: rgba(0,0,0, 0.5);
+}
+
+#second{
+  color:#ff0000;
+  background: yellow;
+}

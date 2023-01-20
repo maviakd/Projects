@@ -1,0 +1,184 @@
+/* Core Stye=les */
+
+
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: white;
+  font-size: 1.1em;
+  list-style: 1.5;
+  text-align: center;
+}
+
+img{
+  display: block;
+  width:100%;
+  height: auto;
+}
+
+h1, h2, h3{
+  margin: 0;
+  padding: 1em 0;
+}
+
+p{
+  margin: 0;
+  padding: 1em 0;
+}
+
+.btn{
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  text-decoration:none;
+  padding: 1em 2em;
+  border:1px lightgrey solid;
+  margin: .5em;
+}
+
+.btn:hover{
+  background: #eaeaea;
+  color: #333;
+}
+
+/* Header showcase */
+
+#showcase{
+  min-height: 450px;
+  color: white;
+  text-align: center;
+}
+
+#showcase .bg-image{
+  position: absolute;
+  background: #333 url("https://www.pexels.com/photo/247791/download/?search_query=programming&tracking_id=38h2plprdmk");
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+#showcase h1{
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+#showcase .content-wrap,
+#section-a .content-wrap{
+  padding: 0 1.5em;
+}
+/* Section A */
+
+#section-a{
+  background: #eaeaea;
+  color: black;
+  padding-bottom: 2em;
+}
+
+/* seciton b */
+
+#section-b{
+  padding-left: 2em 1em 1em;
+
+}
+
+#section-b ul{
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+#section-b li{
+  margin-bottom: 1em;
+  background-color: #fff
+  color:#333;
+}
+
+.card-content{
+  padding-left: 1.5em;
+}
+
+/* section c */
+
+#section-c{
+  background: #fff;
+  color: #333;
+  padding: 2em;
+}
+
+/* section d */
+
+#section-d .box{
+  padding: 2em;
+  color: #fff;
+}
+
+#section-d .box:first-child{
+  background: #2690dA;
+}
+
+/* Footer */
+
+#main-footer{
+  padding: 2em;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+#main-footer{
+  color: #2690dA;
+  text-decoration: none;
+}
+
+/* Media Queries */
+/*Any syle you put here is only going to be in effect if
+the width is above 700 pixels*/
+
+@media(min-width:600px){
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr ;
+  }
+
+  #section-a .content-text{
+    columns: 2;
+    column-gap: 2em;
+  }
+
+  #section-a .content-text p{
+    padding-top: 0;
+    paddingt: 0;
+}
+
+  .content-wrap,
+  #section-b ul{
+    grid-column: 2/4;
+    justify-content: space-around;
+  }
+  #section-b {
+    padding-left: 2em;
+    padding-right: 2em;
+    grid-template-columns: center;
+  }
+
+  .box, #main-footer div{
+    grid-column: span 2;
+  }
+
+  #section-b ul{
+    display: flex;
+  }
+
+  #section-b li{
+    width: 31%
+  }
+
+/* REM Multiplies against the BROWSER element */
+/* EM multiplies against the PARENT element */
+
+}

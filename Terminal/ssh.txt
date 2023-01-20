@@ -1,0 +1,18 @@
+useradd -G sudo -m <username> -s /bin/bash
+passwd <username>
+
+ssh-keygen -t rsa -b 4096 // Generates a key
+~/.ssh/id_rsa // ssh key location
+ssh-copy-id -i ~/.ssh/id_rsa user@host // Sends the key to the server
+https://notthebe.ee/Creating-your-own-OpenVPN-server.html
+
+#touch config              
+Host <What are you going to call this connection <It doesnt matter>>
+        User <>
+        Port 69
+        IdentityFile ~/.ssh/kali2key
+        HostName 10.0.2.15
+
+
+#ssh kali1
+#touch hushlogin

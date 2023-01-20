@@ -1,0 +1,12 @@
+knn3 = KNeighborsRegressor(n_neighbors = 7)
+knn3.fit(x,y)
+
+y_pred_3 = knn3.predict(x_train)
+y_pred
+
+y_pred_test_3 = knn3.predict(x_test)
+y_pred_test
+
+mean_squared_error(y_pred_test_3, y_test)
+
+mean_squared_error(y_pred_3, y_train)

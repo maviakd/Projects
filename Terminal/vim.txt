@@ -1,0 +1,16 @@
+G & GG - Top and bottom of the file
+n & N - Next or back
+/lookingforword - search for word
+*Click pound while cursor on word to find that word*
+d} - Deletes a paragraph
+u - UNDO
+dd - deletes a line
+p - paste
+ci && di - Delete and insert
+ci) - delete everything between parentheses
+cit - dels in tab
+:x - exit and save
+:q! - quit and dont save
+
+
+

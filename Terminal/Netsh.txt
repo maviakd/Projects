@@ -1,0 +1,10 @@
+netsh wlan show networks
+
+netsh wlan set profileparameter <ssid> connectiontype=ibss connectionmode=manual
+
+netsh wlan connect <ssid>
+
+
+
+
+

@@ -1,0 +1,75 @@
+usermod -aG sudo Djodan		--Adding user to sudoers
+usermod -d /home/pi/Desktop	--Changing home directory
+passwd Djodan			--Changing password
+netstat -r
+
+169.254.196.97
+169.254.119.13
+
+ifconfig eth0 192.168.1.5 netmask 255.255.255.0 up --set your IP Address
+ifconfig wlan0 down
+iwconfig wlan0 mode ad-hoc HELLO
+route add default gw 192.168.1.1 -- Set up Gateway
+iwlist wlan0 scan
+
+
+mysql -u root -p
+UPDATE mysql.user SET Password = PASSWORD('password') WHERE User = 'root';
+SELECT User, Host, authentication_string FROM mysql.user;
+CREATE DATABASE demodb;
+GRANT ALL PRIVILEGES ON demodb.* to demousr@localhost;
+DROP DATABASE database name;
+USE demodm; 
+SHOW tables;
+------------------------------------------------------------------
+CREATE TABLE potluck (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(20),
+food VARCHAR(30),
+confirmed CHAR(1), 
+signup_date DATE);
+-------------------------------------------------------------------
+CREATE TABLE mytable(username VARCHAR(20), password VARCHAR(20));
+
+-------------------------------------------------------------------
+TOPLESS IP- 192.168.204.26
+TOP IP - 192.168.200.51
+
+--------------------------------------------------------------------
+sudo crontab -e 
+startx
+nano /home/pi/.bashrc
+sleep
+import os
+print(os.getcwd())
+os.system("ls")
+sudo nano /home/pi/.bashrc #STARTUP FILE#
+sudo raspi-config #Boot files#
+---------------------------------------------------------------------
+
+nmcli con show 			Connecting virtual box 
+nmcli con up "NAME"
+nmcli con modify "NAME" connection.autoconect yes
+---------------------------------------------------------------------
+for linux
+ssh-keygen -t rsa
+location: /root/.ssh/id_rsa
+location: /root/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub | ssh pi@IP-ADDRESS "cat >> .ssh/authorized_keys"
+----------------------------------------------------------------------
+https://github.com/garyexplains/examples/blob/master/primality_cluster_test1.py
+
+primality_cluster_test1.py
+
+help("modules")
+-----------------------------------------------------------------------
+
+baby pips .com
+forex from not knowing shit to knowing everything
+learning the fundamentals of forex
+lmfx
+------------------------------------------------------------------------
+print(f"your number is {('%.2f' % round(num, 2))}")
+num = ("%.2f" % round(1230, 2))
+
+
+

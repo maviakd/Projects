@@ -1,0 +1,45 @@
+/*Inheritance*/
+
+body{
+  /*3rd(last) Piority*/
+  color:green;
+  font-family: monospace;
+  line-height: 1;
+  background-color: lightgrey;
+}
+
+iframe{
+  height: 100px;
+  width: 100px;
+}
+
+div{
+  /*2nd Piority*/
+  color: blue;
+  border: 1px solid black;
+  background-color: inherit;
+}
+
+h2{
+  /*1st Piority*/
+  color: red;
+}
+
+/*External Specificity
+To be exact google html or css Specificity
+
+1
+h2{
+  color: red;
+}
+
+2
+body{
+  color: blue;
+}
+
+3
+*{
+  color:blue
+}
+*/

@@ -1,0 +1,11 @@
+knn2 = KNeighborsRegressor(n_neighbors = 6)
+knn2.fit(x,y)
+
+y_pred_2 = knn2.predict(x_train)
+y_pred
+
+y_pred_test_2 = knn2.predict(x_test)
+y_pred_test
+
+mean_squared_error(y_pred_test_2, y_test)
+mean_squared_error(y_pred_2, y_train)

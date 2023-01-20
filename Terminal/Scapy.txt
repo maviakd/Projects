@@ -1,0 +1,68 @@
+						Scapy
+
+#! /usr/bin/env python3
+from scapy.all import *
+
+a = IP()
+a.show()
+
+a=sniff(count=10)
+a.nsummary()
+
+send - sends a packet (just a single packet)
+IP - create an IP packet
+dst - the destination to send the packet
+ICMP -  create an ICMP packet with default values
+/"helloWorld") payload included in the ICMP packet
+
+
+IP().show()
+ip = IP(src="10.0.2.6")
+ip.dst = "10.0.2.8"
+ip
+
+ip/TCP().show()
+tcp = TCP(sport = 1025, dport = 80)
+tcp.sport = 1025
+tcp.dport = 80
+
+Ethernet 
+Ether().show()
+
+Transmitting 
+OSI Model layer 3 Network - Packets/IP/ICMP | send(ip/tcp)
+OSI Model layer 2 Data Link - Frames/Ethernet/Switch/Bridge sendp(ip/tcp)
+
+Sr() "send receive"
+sr(IP(dst="packetlife.net")/ICMP())
+
+-----------------------------------------------------------------------------------------------------------------------
+
+a=IP / assigning IP to a and changing the value of ttl
+a / prints out changed/added values of the packet
+a.ttl = 20 / changing the value of ttl in aor IP
+a.src / provides user IP address
+a.src = a.src / assigns users IP to packet source IP
+del a.ttl / deletes the ttl segment of the packet
+IP(_) / prints out all fields of the IP packet
+
+TCP()/IP() used as composition between two layers/ facilitate communication
+Ether()/IP()/IP()/UDP()
+
+raw(IP()) / used for prefixing
+
+ls(a)
+a.summary()
+myfile.pdfdump
+
+--------------------------------------------------------------------------------------------------------------------
+my_macs = [get_if_hwaddr(i) for i in get_if_list()]
+print(Ether().src) -------Better choice
+
+
+
+
+
+
+
+

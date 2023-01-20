@@ -1,0 +1,47 @@
+﻿Djo-Dan Maviaki
+
+Step 10 code:
+
+
+A = fdny_4["INCIDENT_TRAVEL_TM_SECONDS_QY"]
+
+
+scaler = MinMaxScaler()
+
+
+X2 = scaler.fit_transform(A)
+
+
+kmeans = KMeans(
+        init="random",
+        n_clusters=3,
+      n_init=10,
+     max_iter=300,
+     random_state= 0 )
+
+
+kmeans.fit(A)
+
+
+clusters = kmeans.predict(A)
+clusters
+
+
+Kmeans.inertia_
+
+
+inertia_list = []
+for k in range(1,11):
+    kmeans = KMeans(n_clusters = k)
+    kmeans.fit(A)
+    clusters = kmeans.predict(A)
+    inertia_list.append(kmeans.inertia_)
+
+
+Inertia_list
+
+
+fdny_alt["clusters"] = clusters
+
+
+sns.pairplot(fdny_alt , hue = "clusters")

@@ -1,0 +1,4 @@
+apt-get install python3-django
+django-admin 
+django-admin startproject django-project
+python3 manage.py runserver

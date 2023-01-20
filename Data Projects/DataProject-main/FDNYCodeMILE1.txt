@@ -1,0 +1,57 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+%matplotlib inline
+
+pd.set_option('display.max_columns', None)
+
+fdny = pd.read_csv("Fire_Incident_Dispatch_Data.csv")
+fdny.head()
+
+fdny_new = fdny.dropna()
+
+months = fdny_new["ALARM_BOX_BOROUGH"].value_counts()
+months.plot(kind = "bar")
+plt.xlabel('Boroughs')
+plt.ylabel('Number of Cases')
+plt.title("Incidents in each Borough”)
+
+fdny_new['INCIDENT_DATETIME'] = pd.to_datetime(fdny_new[‘INCIDENT_DATETIME'])
+
+fdny_new.dtypes
+
+year = fdny_new[“INCIDENT_DATETIME"].dt.year
+
+year.value_counts().plot(kind = "bar")
+plt.xlabel('Year')
+plt.ylabel('Number of Cases')
+plt.title("Year of Incidents in each Borough”)
+
+alarm_source = fdny_new['ALARM_SOURCE_DESCRIPTION_TX'].value_counts()
+alarm_source
+
+alarm_source.plot(kind = 'bar')
+plt.xlabel('Types Alarm Source Used')
+plt.ylabel('Number Of Times Used')
+plt.title("Alarm Source”)
+
+incident_class = fdny_new['INCIDENT_CLASSIFICATION_GROUP'].value_counts()
+incident_class
+
+incident_class.plot(kind = 'bar')
+plt.xlabel('Incident Classification Group')
+plt.ylabel('Number Of Each Classification Group Reported')
+plt.title("Classification Group”)
+
+bx_filter = fdny_new["INCIDENT_BOROUGH"] == "BRONX" 
+bk_filter = fdny_new["INCIDENT_BOROUGH"] == "BROOKLYN"
+dataset = fdny_new[bx_filter | bk_filter]
+
+sns.scatterplot( x = 'INCIDENT_BOROUGH', y = "ENGINES_ASSIGNED_QUANTITY", hue = "INCIDENT_BOROUGH" , data = dataset)
+plt.xlabel('Borough')
+plt.ylabel('Engine Assigned')
+plt.title("Engine Assigned to each incident in borough”)
+sns.scatterplot( x = 'INCIDENT_BOROUGH', y = "INCIDENT_TRAVEL_TM_SECONDS_QY", hue = "INCIDENT_BOROUGH" , data = dataset)
+plt.xlabel('Borough')
+plt.ylabel('Travel Time to get to each Incident')
+plt.title("Engine Assigned to each incident in borough")

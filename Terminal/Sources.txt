@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------
+cd /etc/apt/sources.list
+
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+deb  http://deb.debian.org/debian  stretch main
+deb-src  http://deb.debian.org/debian  stretch main
+apt update
+
+/home/djo/Desktop/pyweb
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
+apt install net-tools
+
+deb http://mirrors.linode.com/ubuntu groovy main restricted
+deb-src http://mirrors.linode.com/ubuntu groovy main restricted
+
+deb http://mirrors.linode.com/ubuntu groovy-updates main restricted
+deb-src http://mirrors.linode.com/ubuntu groovy-updates main restricted
+
+deb http://mirrors.linode.com/ubuntu groovy universe
+deb-src http://mirrors.linode.com/ubuntu groovy universe
+deb http://mirrors.linode.com/ubuntu groovy-updates universe
+deb-src http://mirrors.linode.com/ubuntu groovy-updates universe
+
+deb http://mirrors.linode.com/ubuntu groovy-backports main restricted universe multiverse
+deb-src http://mirrors.linode.com/ubuntu groovy-backports main restricted universe multiverse
+
+deb http://archive.canonical.com/ubuntu groovy partner
+deb-src http://archive.canonical.com/ubuntu groovy partner
+
+deb http://mirrors.linode.com/ubuntu groovy-security main restricted
+deb-src http://mirrors.linode.com/ubuntu groovy-security main restricted
+deb http://mirrors.linode.com/ubuntu groovy-security universe
+deb-src http://mirrors.linode.com/ubuntu groovy-security universe
+deb http://mirrors.linode.com/ubuntu groovy-security multiverse
+deb-src http://mirrors.linode.com/ubuntu groovy-security multiverse
+deb http://archive.ubuntu.com/ubuntu groovy universe

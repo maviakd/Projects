@@ -1,0 +1,72 @@
+arp -a
+get-executionpolicy
+set-executionpolicy -executionpolicy -<TAB>
+(get-wmiobject -Class win32_bios | select SerialNumber)
+[System.Net.Dns]::GetHostName()
+Start-Process -FilePath "cmd.exe"  -ArgumentList '/c "pause"' = run commands on cmd window
+start powershell {COMMAND}
+wget <link> -UseBasicParsing
+if | elseif | else
+
+
+function one(){
+    param ($var1, $var2)
+    Write-Output "Var1 is $var1 and Var2 is $var2"
+}
+one{1}{2}
+
+
+function other($number){
+    return $number*10
+}
+other(3)
+
+
+function final{
+    param($var1, $var2)
+    write-host "($var1) | ($var2)" -ForegroundColor Green
+}
+.\exe.ps1 | final -var1 11 -var2 44  
+
+
+
+
+
+write-output "hello" | nameofcunction
+write-host "you are looking " -NoNewline
+write-host "AWSOME " -ForegroundColor Red -BackgroundColor yellow -nonewline
+write-host "today"
+write-error "Danger"
+Write-Output "this `t is `t not `t me"
+$name = Read-Host "Whats your name" -asSecureString
+[Runtime.interopservices.marshal]::ptrtostringauto([runtime.interopservices.marshal]::securestringtobstr($name))
+get-location | select -expand Path
+pwd | select -expand Path
+get-history
+<CMD> doskey /history
+
+
+while ($count -le $x){
+    Write-Host "$count" -BackgroundColor black -ForegroundColor Green
+    $count += 1
+}
+
+
+for ($count=0; $count -le $x; $count++){
+    Write-Output $count}
+
+
+$dict = New-Object System.Collections.ArrayList
+Arrays = https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?msclkid=55ed6ad8cfda11ecb320ddf814091bad&view=powershell-7.2
+$data=@()
+
+Strings = https://sysadmin-tools.com/blogs/news/string-manipulation-using-powershell?msclkid=58c64eaad0a311ec9b141bd75c261931
+$var = $str.Substring($str.Length - 3,3) = return last 3 of string
+
+
+
+
+
+
+
+

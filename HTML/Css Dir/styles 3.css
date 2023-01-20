@@ -1,0 +1,42 @@
+/*Grouping selectors*/
+h1, h2{
+  color:blue;
+}
+
+/*ID Selector - should be unique*/
+#heading{
+  color:green;
+}
+#footer{
+  color: yellow;
+}
+
+/*Classes - use as many*/
+.green{
+  color: blue;
+}
+.red{
+  color:red;
+}
+
+/*Combination*/
+#title{
+  font-size: 40px;
+}
+
+.lower{
+  text-transform: lowercase;
+}
+
+/*Dics and Spans*/
+div{ /*Grouping*/
+  color: red;
+  background: black;
+}
+
+span{ /*In line elemeents*/
+  text-transform: uppercase;
+  background: lightgreen
+}
+
+/*Inheritance*/

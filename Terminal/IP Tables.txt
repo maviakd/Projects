@@ -1,0 +1,35 @@
+sudo /usr/sbin/./iptables-save
+iptables -L
+iptables -L -v
+iptables -L | grep policy
+
+iptables --policy INPUT DROP
+iptables --policy OUTPUT DROP
+iptables --policy FORWARD DROP
+
+iptables -A INPUT -s 10.10.10.10 -j DROP = drop connections from specified Address
+iptables -A INPUT -s 10.10.10.0/24 -j DROP = drop connections from range of specified addresses
+iptables -A INPUT -s 10.10.10.0/255.255.255.0 -j DROP 
+iptables -A INPUT -p tcp --dport ssh -s 10.10.10.10 -j DROP = blocks ssh connections from specified source
+iptables -A INPUT -p tcp --dport ssh -j DROP - Block ssh connections from all connections
+
+-A = append
+-D = Delete
+-s = source 
+-d = destination
+
+sudo /sbin/iptables-save - saves configuration for iptables
+
+{
+Accept – Allow the connection.
+Drop – Drop the connection, act like it never happened. This is best if you don’t want the source to realize your system exists.
+Reject – Don’t allow the connection, but send back an error. This is best if you don’t want a particular source to connect to your system, but you want them to know that your firewall blocked them.
+}
+
+{
+The filter table in iptables has three chains (sets of rules). The INPUT chain is used for any packet coming into the system. The OUTPUT chain is for any packet leaving the system. And the FORWARD chain is for packets that are forwarded (routed) through the system.
+}
+
+-----------------------------------------------------------------------------------------------------------------------
+
+/etc/network/interfaces

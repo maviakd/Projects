@@ -1,0 +1,48 @@
+import numpy as np
+import graphviz
+ 
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsRegressor
+
+
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.tree import export_graphviz
+
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import mean_squared_error
+
+from sklearn.linear_model import LinearRegression
+
+fdny_cut = pd.read_csv("Fire_Incident_Dispatch_Data-2.csv")
+fdny_small = fdny_cut.dropna()
+
+fdny_alt = fdny_small[[“INCIDENT_BOROUGH","ALARM_BOX_NUMBER","ZIPCODE","INCIDENT_TRAVEL_TM_SECONDS_QY","ENGINES_ASSIGNED_QUANTITY","LADDERS_ASSIGNED_QUANTITY","INCIDENT_CLASSIFICATION_GROUP"]]
+
+fdny_alt
+
+fdny_4 = pd.get_dummies(fdny_alt, columns = ["INCIDENT_BOROUGH","INCIDENT_CLASSIFICATION_GROUP"], drop_first = True)
+fdny_4.head()
+
+x = fdny_4.drop("INCIDENT_TRAVEL_TM_SECONDS_QY", axis = 1)
+x.head()
+
+fdny_4["INCIDENT_TRAVEL_TM_SECONDS_QY"] = fdny_4["INCIDENT_TRAVEL_TM_SECONDS_QY"].str.replace(",", ".")
+fdny_4["INCIDENT_TRAVEL_TM_SECONDS_QY"] = fdny_4[“INCIDENT_TRAVEL_TM_SECONDS_QY"].astype(float)
+
+y = fdny_4["INCIDENT_TRAVEL_TM_SECONDS_QY"]
+y.head()
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2,random_state= 0)
+
+knn = KNeighborsRegressor(n_neighbors = 5)
+knn.fit(x,y)
+
+y_pred = knn.predict(x_train)
+y_pred
+
+y_pred_test = knn.predict(x_test)
+y_pred_test
+
+mean_squared_error(y_pred_test, y_test)
+mean_squared_error(y_pred, y_train)
